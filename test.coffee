@@ -1,11 +1,20 @@
 $ ->
-  # hi!
-  $("#color1").html randc()
-  $("#color2").html randc()
-  $("#color3").html randc()
-  $("#color4").html randc()
-  $("#color5").html randc()
-  $("#color6").html randc()
+  #$("#color1").html randcolor()
+  #$("#color2").html randcolor()
+  #$("#color3").html randcolor()
+  #$("#color4").html randcolor()
+  #$("#color5").html randcolor()
+  #$("#color6").html randcolor()
+
+  $("#color1").css("background-color",randcolor())
+  $("#color2").css("background-color",randcolor())
+  $("#color3").css("background-color",randcolor())
+  $("#color4").css("background-color",randcolor())
+  $("#color5").css("background-color",randcolor())
+  $("#color6").css("background-color",randcolor())
 
 randc = ->
-  return Math.round(Math.random()*256) + ", " + Math.round(Math.random()*256) + ", " + Math.round(Math.random()*256)
+  return Math.round(Math.random()*256)
+
+randcolor = ->
+  return 'rgb(' + randc() + "," + randc() + "," + randc() + ')'
