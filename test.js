@@ -4,17 +4,29 @@
 
   $(function() {
     $("#color1").css("background-color", randcolor());
+    $("#color1").click(function() {
+      return $(this).html($(this).css("background-color"));
+    });
     $("#color2").css("background-color", randcolor());
+    $("#color2").click(function() {
+      return $(this).html($(this).css("background-color"));
+    });
     $("#color3").css("background-color", randcolor());
+    $("#color3").click(function() {
+      return $(this).html($(this).css("background-color"));
+    });
     $("#color4").css("background-color", randcolor());
+    $("#color4").click(function() {
+      return $(this).html($(this).css("background-color"));
+    });
     $("#color5").css("background-color", randcolor());
+    $("#color5").click(function() {
+      return $(this).html($(this).css("background-color"));
+    });
     $("#color6").css("background-color", randcolor());
-    $("#color1").html($("#color1").css("background-color"));
-    $("#color2").html($("#color2").css("background-color"));
-    $("#color3").html($("#color3").css("background-color"));
-    $("#color4").html($("#color4").css("background-color"));
-    $("#color5").html($("#color5").css("background-color"));
-    return $("#color6").html($("#color6").css("background-color"));
+    return $("#color6").click(function() {
+      return $(this).html($(this).css("background-color"));
+    });
   });
 
   randc = function() {
