@@ -25,12 +25,12 @@ $ ->
     $(this).html($(this).css("background-color"))
 
   $("#color6")
-    .css("background-color",randcolor())
+    .css("background-color",randcolor()) 
   $("#color6").click ->
     $(this).html($(this).css("background-color"))
 
 randc = ->
-  return Math.round(Math.random()*256)
+  return Math.round(Math.random()*361)
 
 randcolor = ->
-  return 'rgb(' + randc() + "," + randc() + "," + randc() + ')'
+  return 'hsl(' + randc() + "," + randc() + "%," + randc() + '%)'

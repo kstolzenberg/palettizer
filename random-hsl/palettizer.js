@@ -30,11 +30,11 @@
   });
 
   randc = function() {
-    return Math.round(Math.random() * 256);
+    return Math.round(Math.random() * 361);
   };
 
   randcolor = function() {
-    return 'rgb(' + randc() + "," + randc() + "," + randc() + ')';
+    return 'hsl(' + randc() + "," + randc() + "%," + randc() + '%)';
   };
 
 }).call(this);
