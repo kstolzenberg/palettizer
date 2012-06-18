@@ -9,7 +9,6 @@ div {
 height:50px;
 font-family:arial;
 font-size:10px;
-color: #000;
 position:50%;
 line-height:50px;
 }
@@ -28,7 +27,6 @@ border-color:#ffffff;
 #footer {
 border-style:solid;
 border-top-width: 120px;
-padding-bottom:5px;
 border-color:#ffffff;
 text-align:center;
 line-height:10px;
@@ -36,7 +34,7 @@ line-height:10px;
 
 
 body a:-webkit-any-link {
-color: #000;
+color:#000;
 text-decoration:none;
 
 }
