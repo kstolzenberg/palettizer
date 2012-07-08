@@ -24,14 +24,14 @@
     });
     c4 = randcolor4(c1);
     c4_str = convert_list_to_hsl(c4);
-    $("#color4").css("background-color", c4_str);
-    $("#color4").click(function() {
+    $("#color5").css("background-color", c4_str);
+    $("#color5").click(function() {
       return $(this).html(c4_str);
     });
     c5 = randcolor5(c2);
     c5_str = convert_list_to_hsl(c5);
-    $("#color5").css("background-color", c5_str);
-    $("#color5").click(function() {
+    $("#color4").css("background-color", c5_str);
+    $("#color4").click(function() {
       return $(this).html(c5_str);
     });
     c6 = randcolor6(c2);
@@ -79,7 +79,7 @@
   };
 
   rands4 = function() {
-    return Math.floor(Math.random() * 41);
+    return Math.floor(Math.random() * 31);
   };
 
   randl4 = function() {
