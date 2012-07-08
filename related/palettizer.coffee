@@ -13,29 +13,33 @@ $ ->
   $("#color2").click ->
     $(this).html(c2_str)
 
-  c3 = randcolor3()
+  c3 = randcolor3(c1)
+  c3_str = convert_list_to_hsl(c3)
   $("#color3")
-    .css("background-color",c3)
+    .css("background-color",c3_str)
   $("#color3").click ->
-    $(this).html(c3)
+    $(this).html(c3_str)
 
-  c4 = randcolor4()
+  c4 = randcolor4(c1)
+  c4_str = convert_list_to_hsl(c4)
   $("#color4")
-    .css("background-color",c4)
+    .css("background-color",c4_str)
   $("#color4").click ->
-    $(this).html(c4)
+    $(this).html(c4_str)
 
-  c5 = randcolor5()
+  c5 = randcolor5(c2)
+  c5_str = convert_list_to_hsl(c5)
   $("#color5")
-    .css("background-color", c5)
+    .css("background-color", c5_str)
   $("#color5").click ->
-    $(this).html(c5)
+    $(this).html(c5_str)
 
-  c6 = randcolor6()
+  c6 = randcolor6(c2)
+  c6_str = convert_list_to_hsl(c6)
   $("#color6")
-    .css("background-color", c6) 
+    .css("background-color", c6_str) 
   $("#color6").click ->
-    $(this).html(c6)
+    $(this).html(c6_str)
     
 
 
@@ -52,11 +56,11 @@ convert_list_to_hsl = (hsl_list) ->
 
 #c1:
 randh1 = ->
-  return Math.floor(Math.random()*360)
+  return Math.floor(Math.random()*361)
   #hue value; math.floor is more uniform than math.random 
 
 rands1 = ->
-  return Math.floor(Math.random()*(60-40+1)+40)
+  return Math.floor(Math.random()*(95-40+1)+40)
   #saturation percent; trapped by Math.floor(Math.random() * (max - min + 1)) + min
 
 randl1 = ->
@@ -68,83 +72,63 @@ randcolor1 = ->
 
 
 
-#c2=c1 complement:
+#c2= c1 complement:
 randcolor2 = (c) ->
   return [(c[0]+180), c[1], c[2]]
-  #return 'hsl(' + (c[0] + 180) + "," + c[1] + "%," + c[2] + '%)'
-  #need to count for circular representation, where x>360, (x-360)
+
+
+# manage conplexity by breaking the edge cases apart ! need to add function to avoid h=420
+# convert_color_circle = (c) ->
+# return if [c[0]] > 360; (c[0] - 360)
 
 
 
-#c3=c1 light accent:
-randh3 = ->
-  return Math.round(Math.random()*360)
-  #hue value
-
+#c3= c1 light accent:
 rands3 = ->
-  return Math.round(Math.random()*100)
-  #saturation percent
+  return Math.floor(Math.random()*41)
 
 randl3 = ->
-  return Math.round(Math.random()*100)
-  #lightness percent
+  return Math.floor(Math.random()*(100-70+1)+70)
 
-randcolor3  = ->
-  return 'hsl(' + randh3() + "," + rands3() + "%," + randl3() + '%)'
-
+randcolor3  = (c) ->
+  return [c[0], rands3(), randl3()]
 
 
-#c4=c1 dark accent:
-randh4 = ->
-  return Math.round(Math.random()*360)
-  #hue value
 
+#c4= c1 dark accent:
 rands4 = ->
-  return Math.round(Math.random()*100)
-  #saturation percent
+  return Math.floor(Math.random()*41)
 
 randl4 = ->
-  return Math.round(Math.random()*100)
-  #lightness percent
+  return Math.floor(Math.random()*(40-5+1)+5)
 
-randcolor4  = ->
-  return 'hsl(' + randh4() + "," + rands4() + "%," + randl4() + '%)'
-
+randcolor4  = (c) ->
+  return [c[0], rands4(), randl4()]
 
 
-#c5=c2 light accent:
-randh5 = ->
-  return Math.round(Math.random()*360)
-  #hue value
 
+#c5= c2 light accent:
 rands5 = ->
-  return Math.round(Math.random()*100)
-  #saturation percent
+  return Math.floor(Math.random()*41)
 
 randl5 = ->
-  return Math.round(Math.random()*100)
-  #lightness percent
+  return Math.floor(Math.random()*(100-70+1)+70)
 
-randcolor5  = ->
-  return 'hsl(' + randh5() + "," + rands5() + "%," + randl5() + '%)'
-
+randcolor5  = (c) ->
+  return [c[0], rands5(), randl5()]
 
 
-#c6=c2 dark accent:
-randh6 = ->
-  return Math.round(Math.random()*360)
-  #hue value
+
+#c6= c2 dark accent:
 
 rands6 = ->
-  return Math.round(Math.random()*100)
-  #saturation percent
+  return Math.floor(Math.random()*41)
 
 randl6 = ->
-  return Math.round(Math.random()*100)
-  #lightness percent
+  return Math.floor(Math.random()*(40-5+1)+5)
 
-randcolor6  = ->
-  return 'hsl(' + randh6() + "," + rands6() + "%," + randl6() + '%)'
+randcolor6 = (c) ->
+  return [c[0], rands6(), randl6()]
 
 
 
