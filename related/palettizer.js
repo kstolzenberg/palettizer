@@ -40,7 +40,7 @@
     $("#color6").click(function() {
       return $(this).html(c6_str);
     });
-    return window.location.href = window.location.href + c1;
+    return window.location.href = window.location.href + '/?v= ' + c1;
   });
 
   convert_list_to_hsl = function(hsl_list) {
