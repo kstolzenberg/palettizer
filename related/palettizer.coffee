@@ -43,7 +43,7 @@ $ ->
   $("#color6").click ->
     $(this).html(c6_str)
   
-  window.location.href = window.location.href + '/?v= ' + c2
+  window.location.href = window.location.href + c6
 
 # $("#makeurl").text(location.href + '/?' + 'comp1=' + c1 + '&' + 'comp2=' + c2)
 # need to generate the randoms through the url and then populate the css, rather than generating through the css and iniflling the url to match
