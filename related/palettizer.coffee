@@ -44,7 +44,7 @@ $ ->
     $(this).html(c6_str)
   
 
-  $("#makeurl").text(location.href + c2 + "," + c6)
+  $("#makeurl").text(location.href + '/?' + 'comp1=' + c1 + '&' + 'comp2=' + c2)
 
 
 # for better control, remove hsl string from explicit function and leave functions as lists (with inherent order)

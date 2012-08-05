@@ -40,7 +40,7 @@
     $("#color6").click(function() {
       return $(this).html(c6_str);
     });
-    return $("#makeurl").text(location.href + c2 + "," + c6);
+    return $("#makeurl").text(location.href + '/?' + 'comp1=' + c1 + '&' + 'comp2=' + c2);
   });
 
   convert_list_to_hsl = function(hsl_list) {
