@@ -1,0 +1,49 @@
+/*@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: normal;
+  
+  src: local('Lobster'), url('http://themes.googleusercontent.com/static/fonts/lobster/v5/NIaFDq6p6eLpSvtV2DTNDQLUuEpTyoUstqEm5AMlJo4.woff') format('woff');
+}
+*/
+
+div {
+font-family: Arial, "MS Trebuchet", sans-serif;
+font-size: 15px;
+}
+
+#pictureplane
+{
+position: relative;
+height: 150px;
+width: 150px;
+margin: 50px;
+padding:10px;
+border: 1px solid black;
+border-style: dashed;
+perspective:150;
+perspective-origin: 10% 10%;
+-webkit-perspective:25; /* Safari and Chrome */
+-webkit-perspective-origin: 50% 50%; /* Safari and Chrome */
+}
+
+#floor
+{
+padding:50px;
+position: absolute;
+border: 1px solid white;
+background-color: orange;
+filter:alpha(opacity=5);
+transform: rotateX(45deg);
+-webkit-transform: rotateX(45deg); /* Safari and Chrome */
+}
+
+
+
+
+
+
+
+
+
+
