@@ -34,7 +34,6 @@ $ ->
   $("#color4").click ->
     $(this).html(c5_str)
 
-
 # note function c5 belongs to div id  color 4 for better html display order
 
   c6 = randcolor6(c2)
@@ -43,7 +42,10 @@ $ ->
     .css("background-color", c6_str) 
   $("#color6").click ->
     $(this).html(c6_str)
-    
+  
+
+  $("#makeurl").text(location.href + c2 + "," + c6)
+
 
 # for better control, remove hsl string from explicit function and leave functions as lists (with inherent order)
 # calculate HSL values as a generic list, manipulate/relate, then apply HSL markup for browser to read
@@ -53,12 +55,8 @@ $ ->
 
 
 
-makeurl = ->
-  window.location.href = "url"
-
 convert_list_to_hsl = (hsl_list) ->
   return 'hsl(' + hsl_list[0] + "," + hsl_list[1] + "%," + hsl_list[2] + '%)'
-
 
 #c1:
 randh1 = ->

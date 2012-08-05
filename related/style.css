@@ -24,6 +24,14 @@ border-bottom-width: 120px;
 border-color:#ffffff;
 }
 
+#makeurl {
+border-style:solid;
+border-top-width: 120px;
+border-color:#ffffff;
+text-align:center;
+line-height:10px;
+}
+
 #footer {
 border-style:solid;
 border-top-width: 120px;
