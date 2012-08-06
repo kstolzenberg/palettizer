@@ -1,23 +1,17 @@
-/*@font-face {
-  font-family: 'Lobster';
-  font-style: normal;
-  font-weight: normal;
-  
-  src: local('Lobster'), url('http://themes.googleusercontent.com/static/fonts/lobster/v5/NIaFDq6p6eLpSvtV2DTNDQLUuEpTyoUstqEm5AMlJo4.woff') format('woff');
-}
-*/
+@import url(http://fonts.googleapis.com/css?family=Bangers);
 
 div {
 font-family: Arial, "MS Trebuchet", sans-serif;
 font-size: 15px;
 }
 
-#pictureplane
+#ppfloor
 {
-position: relative;
+position: fixed;
 height: 150px;
 width: 150px;
-margin: 50px;
+margin-top: 150px;
+margin-left: 100px;
 padding:10px;
 border: 1px solid black;
 border-style: dashed;
@@ -33,9 +27,76 @@ padding:50px;
 position: absolute;
 border: 1px solid white;
 background-color: orange;
-filter:alpha(opacity=5);
+opacity:.8;
 transform: rotateX(45deg);
 -webkit-transform: rotateX(45deg); /* Safari and Chrome */
+}
+
+
+#ppceiling
+{
+position: fixed;
+height: 150px;
+width: 150px;
+margin-left: 100px;
+margin-top: 50px;
+padding:10px;
+border: 1px solid black;
+border-style: dashed;
+-webkit-transform: rotate(180deg);
+-webkit-perspective:25;
+-webkit-perspective-origin: 50% 50%; 
+}
+
+#ceiling
+{
+padding:50px;
+position: absolute;
+border: 1px solid white;
+background-color: yellow;
+opacity:.8;
+-webkit-transform: rotate(180deg);
+-webkit-transform: rotateX(45deg);
+}
+
+#ppright
+{
+position: relative;
+height: 150px;
+width: 150px;
+margin-top: 200px;
+margin-left: 100px;
+padding:10px;
+border: 1px solid black;
+border-style: dashed;
+-webkit-transform: rotate(-90deg);
+-webkit-perspective:25;
+-webkit-perspective-origin: 50% 50%; 
+}
+
+/*need better understanding of postioning and need a better sense of how to laterally manipulate shapes*/
+
+#right
+{
+padding:50px;
+position: absolute;
+border: none;
+background-color: olive;
+opacity:.8;
+-webkit-transform: rotate(-90deg);
+-webkit-transform: rotateX(45deg);
+}
+
+
+
+#loud
+{postition: fixed;
+ margin-top: -200px;
+ font-family: Bangers, Arial;
+ font-size: 90px;
+ color: black;
+ -webkit-transform: rotate(10deg);
+
 }
 
 
