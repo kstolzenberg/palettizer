@@ -48,8 +48,7 @@ line-height:50px;
 .container {
 	width: 400px;
 	height: 200px;
-	left:50%;
-	top:50%;
+	left:52%;
 	position: relative;
 	border: 0px solid black;
 	-webkit-perspective: 200px;
@@ -74,7 +73,7 @@ line-height:50px;
 	border:0px;
 }
 
-#cube .color1 { -webkit-transform: rotateY(0deg) translateZ(100px);opacity:.6}
+#cube .color1 { -webkit-transform: rotateY(0deg) translateZ(100px);opacity:.1}
 #cube .color2 {-webkit-transform: rotateX(180deg) translateZ(100px);}
 #cube .color3 {-webkit-transform: rotateY(90deg) translateZ(100px);}
 #cube .color4{-webkit-transform: rotateY(-90deg) translateZ(100px);}
