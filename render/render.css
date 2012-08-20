@@ -46,11 +46,11 @@ line-height:50px;
 
 /*size of viewport for 3d objects*/
 .container {
-	width: 300px;
+	width: 400px;
 	height: 200px;
 	left:50%;
 	top:50%;
-	position: absolute;
+	position: relative;
 	border: 0px solid black;
 	-webkit-perspective: 200px;
 	-webkit-perspective-origin: 60%, 50%;
