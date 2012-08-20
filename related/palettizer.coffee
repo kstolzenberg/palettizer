@@ -44,7 +44,9 @@ $ ->
     $(this).html(c6_str)
   
 
-  window.location.href = window.location.href + c6 #very close - sets the location but doesn't load content?
+  window.location.hash = 
+    c6 
+#very close - sets the location but doesn't load content?
 
 # $("#makeurl").text(location.href + '/?' + 'comp1=' + c1 + '&' + 'comp2=' + c2)
 # need to generate the randoms through the url and then populate the css, rather than generating through the css and iniflling the url to match
@@ -59,7 +61,7 @@ $ ->
 
 
 convert_list_to_hsl = (hsl_list) ->
-  return 'hsl(' + hsl_list[0] + "," + hsl_list[1] + "%," + hsl_list[2] + '%)'
+  'hsl(' + hsl_list[0] + "," + hsl_list[1] + "%," + hsl_list[2] + '%)'
 
 #c1:
 randh1 = ->
