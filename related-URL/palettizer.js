@@ -37,9 +37,10 @@
     c6 = randcolor6(c2);
     c6_str = convert_list_to_hsl(c6);
     $("#color6").css("background-color", c6_str);
-    return $("#color6").click(function() {
+    $("#color6").click(function() {
       return $(this).html(c6_str);
     });
+    return $("a#titlelink").attr("href", document.URL.split("?")[0] + '?var1=33&var2=20&var3=23');
   });
 
   convert_list_to_hsl = function(hsl_list) {

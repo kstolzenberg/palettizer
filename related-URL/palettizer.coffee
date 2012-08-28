@@ -42,7 +42,9 @@ $ ->
     .css("background-color", c6_str) 
   $("#color6").click ->
     $(this).html(c6_str)
-  
+
+
+  $("a#titlelink").attr("href", document.URL.split("?")[0]+'?var1=33&var2=20&var3=23')
 
 # $("#makeurl").text(location.href + '/?' + 'comp1=' + c1 + '&' + 'comp2=' + c2)
 # need to generate the randoms through the url and then populate the css, rather than generating through the css and iniflling the url to match
