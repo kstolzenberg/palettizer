@@ -53,13 +53,12 @@ $ ->
 # convert list of number 'hsl_list' into 'hsl()' string
 # hsl_list = [34,56,77] where [0] is the index position of the first number of the list
 
-
-
-
 convert_list_to_hsl = (hsl_list) ->
   'hsl(' + hsl_list[0] + "," + hsl_list[1] + "%," + hsl_list[2] + '%)'
 
-#c1:
+  
+
+###c1: 
 randh1 = ->
   return Math.floor(Math.random()*361)
   #hue value; math.floor is more uniform than math.random 
@@ -74,8 +73,20 @@ randl1 = ->
 
 randcolor1 = ->
   return [randh1(), rands1(), randl1()]
+### 
 
+randcolor1 = ->
+  vars = {}
+  q = document.URL.split("?")[1]
+  q = q.split("&")
+  
+  for entry in q
+    hash = entry.split("=")
+    vars[hash[0]] = +hash[1]
 
+  [vars['var1'],vars['var2'],vars['var3']]
+
+##################################################################################
 
 #c2= c1 complement:
 randcolor2 = (c) ->
