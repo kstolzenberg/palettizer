@@ -34,7 +34,7 @@ $ ->
   $("#color4").click ->
     $(this).html(c5_str)
 
-# note function c5 belongs to div id  color 4 for better html display order
+  # note function c5 belongs to div id  color 4 for better html display order
 
   c6 = randcolor6(c2)
   c6_str = convert_list_to_hsl(c6)
@@ -44,7 +44,13 @@ $ ->
     $(this).html(c6_str)
 
 
-  $("a#titlelink").attr("href", document.URL.split("?")[0]+'?var1=33&var2=20&var3=23')
+
+
+
+
+  gc = [randh1(), rands1(), randl1()]
+  $("a#titlelink").attr("href", document.URL.split("?")[0]+'?var1='+gc[0]+'&var2='+gc[1]+'&var3='+gc[2])
+
 
 # $("#makeurl").text(location.href + '/?' + 'comp1=' + c1 + '&' + 'comp2=' + c2)
 # need to generate the randoms through the url and then populate the css, rather than generating through the css and iniflling the url to match
@@ -59,8 +65,6 @@ convert_list_to_hsl = (hsl_list) ->
   'hsl(' + hsl_list[0] + "," + hsl_list[1] + "%," + hsl_list[2] + '%)'
 
   
-
-###c1: 
 randh1 = ->
   return Math.floor(Math.random()*361)
   #hue value; math.floor is more uniform than math.random 
@@ -75,7 +79,7 @@ randl1 = ->
 
 randcolor1 = ->
   return [randh1(), rands1(), randl1()]
-### 
+
 
 randcolor1 = ->
   vars = {}
