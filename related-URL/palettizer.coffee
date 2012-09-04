@@ -1,4 +1,11 @@
 $ ->
+
+
+  # create the title link
+  gc = [randh1(), rands1(), randl1()]
+  $("a#titlelink").attr("href", document.URL.split("?")[0]+'?var1='+gc[0]+'&var2='+gc[1]+'&var3='+gc[2])
+  
+
   c1 = randcolor1()
   c1_str = convert_list_to_hsl(c1)
   $("#color1")
@@ -44,20 +51,7 @@ $ ->
     $(this).html(c6_str)
 
 
-randcolor1 = ->
-  vars = {}
-  q = document.URL.split("?")[1]
-  q = q.split("&")
-  
-  for entry in q
-    hash = entry.split("=")
-    vars[hash[0]] = +hash[1]
 
-  [vars['var1'],vars['var2'],vars['var3']]
-
-
-  gc = [randh1(), rands1(), randl1()]
-  $("a#titlelink").attr("href", document.URL.split("?")[0]+'?var1='+gc[0]+'&var2='+gc[1]+'&var3='+gc[2])
 
 
 # $("#makeurl").text(location.href + '/?' + 'comp1=' + c1 + '&' + 'comp2=' + c2)
@@ -86,7 +80,27 @@ randl1 = ->
   #lightness percent; trapped by Math.floor(Math.random() * (max - min + 1)) + min
 
 randcolor1 = ->
-  return [randh1(), rands1(), randl1()]
+
+
+  vars = {}
+  q = document.URL.split("?")[1]
+
+  if q
+
+    q = q.split("&")
+    
+    for entry in q
+      hash = entry.split("=")
+      vars[hash[0]] = +hash[1]
+
+    [vars['var1'],vars['var2'],vars['var3']]
+
+  else
+
+    location.assign('?var1='+randh1()+'&var2='+rands1()+'&var3='+randl1())
+    
+
+
 
 
 

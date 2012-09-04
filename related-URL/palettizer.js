@@ -3,7 +3,9 @@
   var convert_list_to_hsl, randcolor1, randcolor2, randcolor3, randcolor4, randcolor5, randcolor6, randh1, randl1, randl3, randl4, randl5, randl6, rands1, rands3, rands4, rands5, rands6;
 
   $(function() {
-    var c1, c1_str, c2, c2_str, c3, c3_str, c4, c4_str, c5, c5_str, c6, c6_str;
+    var c1, c1_str, c2, c2_str, c3, c3_str, c4, c4_str, c5, c5_str, c6, c6_str, gc;
+    gc = [randh1(), rands1(), randl1()];
+    $("a#titlelink").attr("href", document.URL.split("?")[0] + '?var1=' + gc[0] + '&var2=' + gc[1] + '&var3=' + gc[2]);
     c1 = randcolor1();
     c1_str = convert_list_to_hsl(c1);
     $("#color1").css("background-color", c1_str);
@@ -42,21 +44,6 @@
     });
   });
 
-  randcolor1 = function() {
-    var entry, gc, hash, q, vars, _i, _len;
-    vars = {};
-    q = document.URL.split("?")[1];
-    q = q.split("&");
-    for (_i = 0, _len = q.length; _i < _len; _i++) {
-      entry = q[_i];
-      hash = entry.split("=");
-      vars[hash[0]] = +hash[1];
-    }
-    [vars['var1'], vars['var2'], vars['var3']];
-    gc = [randh1(), rands1(), randl1()];
-    return $("a#titlelink").attr("href", document.URL.split("?")[0] + '?var1=' + gc[0] + '&var2=' + gc[1] + '&var3=' + gc[2]);
-  };
-
   convert_list_to_hsl = function(hsl_list) {
     return 'hsl(' + hsl_list[0] + "," + hsl_list[1] + "%," + hsl_list[2] + '%)';
   };
@@ -74,7 +61,20 @@
   };
 
   randcolor1 = function() {
-    return [randh1(), rands1(), randl1()];
+    var entry, hash, q, vars, _i, _len;
+    vars = {};
+    q = document.URL.split("?")[1];
+    if (q) {
+      q = q.split("&");
+      for (_i = 0, _len = q.length; _i < _len; _i++) {
+        entry = q[_i];
+        hash = entry.split("=");
+        vars[hash[0]] = +hash[1];
+      }
+      return [vars['var1'], vars['var2'], vars['var3']];
+    } else {
+      return location.assign('?var1=' + randh1() + '&var2=' + rands1() + '&var3=' + randl1());
+    }
   };
 
   randcolor2 = function(c) {
