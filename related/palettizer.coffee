@@ -4,7 +4,7 @@ $ ->
   $("a#titlelink").attr("href", document.URL.split("?")[0]+'?var1='+gc[0]+'&var2='+gc[1]+'&var3='+gc[2])
   
 
-  # convert random variables to colors, render a div, and click-return action for 6 divs
+  # convert random variables to colors, render a div, and return name
   c1 = randcolor1()
   c1_str = convert_list_to_hsl(c1)
   $("#color1")
