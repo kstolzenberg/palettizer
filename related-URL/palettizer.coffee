@@ -44,8 +44,16 @@ $ ->
     $(this).html(c6_str)
 
 
+randcolor1 = ->
+  vars = {}
+  q = document.URL.split("?")[1]
+  q = q.split("&")
+  
+  for entry in q
+    hash = entry.split("=")
+    vars[hash[0]] = +hash[1]
 
-
+  [vars['var1'],vars['var2'],vars['var3']]
 
 
   gc = [randh1(), rands1(), randl1()]
@@ -81,16 +89,6 @@ randcolor1 = ->
   return [randh1(), rands1(), randl1()]
 
 
-randcolor1 = ->
-  vars = {}
-  q = document.URL.split("?")[1]
-  q = q.split("&")
-  
-  for entry in q
-    hash = entry.split("=")
-    vars[hash[0]] = +hash[1]
-
-  [vars['var1'],vars['var2'],vars['var3']]
 
 ##################################################################################
 
